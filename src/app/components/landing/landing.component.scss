@@ -1,0 +1,22 @@
+.content {
+  height: 100vh;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  #intro {
+    font-size: 2.5rem;
+    font-family: Helvetica;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  #my-name {
+    color: #FF4081;
+  }
+
+}

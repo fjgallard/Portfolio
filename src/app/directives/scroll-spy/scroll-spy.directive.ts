@@ -16,8 +16,7 @@ export class ScrollSpyDirective {
     const children = this.el.nativeElement.children;
     const scrollTop = event.target.scrollTop;
     const parentOffset = event.target.offsetTop;
-
-    children.array.forEach(element => {
+    Array.from(children).forEach((element: any) => {
       if (this.spiedTags.some(spiedTag => spiedTag === element.tagName)) {
         if ((element.offsetTop - parentOffset) <= scrollTop) {
           currentSection = element.id;

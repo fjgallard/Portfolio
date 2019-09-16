@@ -12,4 +12,7 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
   }
 
+  scrollTo(section: string) {
+    document.querySelector('#' + section).scrollIntoView();
+  }
 }

@@ -21,7 +21,12 @@ export class HomeComponent implements OnInit {
   }
 
   scrollTo(section: string) {
-    document.querySelector('#' + section).scrollIntoView();
+    const body = document.querySelector('.content');
+    const element = document.querySelector('#' + section);
+    // document.querySelector('#' + section).scrollIntoView({ behavior: 'smooth' });
+    body.animate({
+      scrollTop: element.getBoundingClientRect().top
+    }, 10000);
   }
 
 }

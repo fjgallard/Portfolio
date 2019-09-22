@@ -10,13 +10,18 @@ mat-toolbar {
 
   #intro {
     font-size: 1.5rem;
-    font-family: Helvetica;
+    font-family: Roboto;
+    font-weight: 300;
     line-height: 2rem;
     text-align: center;
   }
 
   #my-name {
     color: #FF4081;
+  }
+
+  #button-link {
+    margin: 1rem;
   }
 }
 
@@ -25,6 +30,10 @@ mat-toolbar {
     #intro {
       font-size: 2.5rem;
       line-height: 3rem;
+    }
+
+    #button-link {
+      margin-top: auto;
     }
   }
 }

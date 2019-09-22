@@ -16,17 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSectionChange(sectionId: string) {
-    console.log(sectionId);
     this.currentSection = sectionId;
-  }
-
-  scrollTo(section: string) {
-    const body = document.querySelector('.content');
-    const element = document.querySelector('#' + section);
-    // document.querySelector('#' + section).scrollIntoView({ behavior: 'smooth' });
-    body.animate({
-      scrollTop: element.getBoundingClientRect().top
-    }, 10000);
   }
 
 }

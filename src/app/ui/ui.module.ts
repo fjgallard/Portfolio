@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [SidenavComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
+  ],
+  exports: [
+    SidenavComponent
   ]
 })
 export class UiModule { }

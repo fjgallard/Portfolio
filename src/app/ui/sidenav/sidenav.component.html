@@ -1,6 +1,18 @@
 <mat-sidenav-container>
-  <mat-sidenav mode="over" [(opened)]="opened" (closedStart)="toggleSideNav()" #sidenav role="navigation" id="sidenav">
-    Sidenav
+  <mat-sidenav
+  mode="over"
+  [(opened)]="opened"
+  (closedStart)="toggleSideNav()"
+  #sidenav
+  role="navigation"
+  id="sidenav">
+    <div class="content">
+      <ul class="links">
+        <li>Skills</li>
+        <li>Blog</li>
+        <li>Contact</li>
+      </ul>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <ng-content></ng-content>

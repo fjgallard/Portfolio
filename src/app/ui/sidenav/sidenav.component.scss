@@ -1,12 +1,15 @@
 #sidenav {
-  width: 40%;
+  width: 60%;
 }
 
 .mat-drawer {
   top: 56px;
 }
 
+.sidenav-link:hover {
+  color:#FF4081;
+}
+
 mat-sidenav-container {
   margin-top: -56px;
-  // padding-top: 56px;
 }

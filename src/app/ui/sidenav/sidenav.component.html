@@ -8,8 +8,8 @@
   id="sidenav">
     <div class="content">
       <mat-action-list>
-        <button class="sidenav-link" mat-list-item>Home</button>
-        <button class="sidenav-link" mat-list-item>Skills</button>
+        <button class="sidenav-link" mat-list-item (click)="sideNavLinkClicked('landing')">Home</button>
+        <button class="sidenav-link" mat-list-item (click)="sideNavLinkClicked('skills')">Skills</button>
         <button class="sidenav-link" mat-list-item>Blog</button>
         <button class="sidenav-link" mat-list-item>Contact</button>
       </mat-action-list>

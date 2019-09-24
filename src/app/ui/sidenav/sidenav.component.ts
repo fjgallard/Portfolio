@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidenav',
@@ -17,8 +18,22 @@ export class SidenavComponent implements OnInit {
   }
 
   toggleSideNav() {
+    // rename this to "close sidenav";
     this.opened = false;
     this.toggleEvent.emit(false);
   }
 
+  sideNavLinkClicked(section: string) {
+    this.scrollTo(section).then((res) => {
+      console.log(res);
+      this.toggleSideNav();
+    });
+  }
+
+  scrollTo(section: string): Promise<boolean> {
+    // const testObs: Promise<void>;
+
+    document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+    return Promise.resolve(true);
+  }
 }

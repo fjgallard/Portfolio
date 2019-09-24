@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'github-portfolio';
+  opened = false;
+
+  toggleSideNav() {
+    this.opened = !this.opened;
+  }
+
+  updateNav() {
+    this.opened = false;
+  }
 }

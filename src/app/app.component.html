@@ -1,4 +1,7 @@
-<app-sidenav>
+<app-navbar (toggleEvent)="toggleSideNav()"></app-navbar>
+<app-sidenav
+  [(opened)]="opened"
+  (toggleEvent)="updateNav()">
   <router-outlet></router-outlet>
 </app-sidenav>
 

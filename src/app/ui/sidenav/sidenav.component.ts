@@ -25,14 +25,11 @@ export class SidenavComponent implements OnInit {
 
   sideNavLinkClicked(section: string) {
     this.scrollTo(section).then((res) => {
-      console.log(res);
       this.toggleSideNav();
     });
   }
 
   scrollTo(section: string): Promise<boolean> {
-    // const testObs: Promise<void>;
-
     document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
     return Promise.resolve(true);
   }

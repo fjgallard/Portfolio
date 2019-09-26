@@ -2,7 +2,7 @@
   <mat-sidenav
   mode="over"
   [(opened)]="opened"
-  (closedStart)="toggleSideNav()"
+  (closedStart)="closeSideNav()"
   #sidenav
   role="navigation"
   id="sidenav">
@@ -10,6 +10,7 @@
       <mat-action-list>
         <button class="sidenav-link" mat-list-item (click)="sideNavLinkClicked('landing')">Home</button>
         <button class="sidenav-link" mat-list-item (click)="sideNavLinkClicked('skills')">Skills</button>
+        <button class="sidenav-link" mat-list-item (click)="sideNavLinkClicked('skills')">Work Experience</button>
         <button class="sidenav-link" mat-list-item>Blog</button>
         <button class="sidenav-link" mat-list-item>Contact</button>
       </mat-action-list>

@@ -17,20 +17,15 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleSideNav() {
-    // rename this to "close sidenav";
-    this.opened = false;
+  closeSideNav() {
     this.toggleEvent.emit(false);
   }
 
   sideNavLinkClicked(section: string) {
-    this.scrollTo(section).then((res) => {
-      this.toggleSideNav();
-    });
+    this.closeSideNav();
   }
 
-  scrollTo(section: string): Promise<boolean> {
+  scrollTo(section: string) {
     document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
-    return Promise.resolve(true);
   }
 }

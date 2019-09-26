@@ -1,4 +1,36 @@
 <div class="content" id="test">
-  Skills!
-  <a mat-raised-button href="#landing">View My Work</a>
+  <div class="header">
+      <h1 class="headline">About</h1>
+      <div class="bar"></div>
+  </div>
+
+<mat-tab-group>
+  <mat-tab label="Frontend">
+    <mat-list>
+      <mat-list-item *ngFor="let skill of frontend">
+        <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
+        <h3 matLine>{{ skill.name }}</h3>
+        <p matLine>{{ skill.description }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-tab>
+  <mat-tab label="Backend">
+    <mat-list>
+      <mat-list-item *ngFor="let skill of backend">
+        <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
+        <h3 matLine>{{ skill.name }}</h3>
+        <p matLine>{{ skill.description }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-tab>
+  <mat-tab label="Frameworks/Stacks">
+    <mat-list>
+      <mat-list-item *ngFor="let skill of frameworks">
+        <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
+        <h3 matLine>{{ skill.name }}</h3>
+        <p matLine>{{ skill.description }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-tab>
+</mat-tab-group>
 </div>

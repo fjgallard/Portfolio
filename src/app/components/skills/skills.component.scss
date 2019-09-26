@@ -2,4 +2,28 @@
   height: calc(100vh - 56px);
   padding-top: 56px;
   margin-top: -56px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin: 1rem auto;
+}
+
+.headline {
+  font-weight: 300;
+  text-align: center;
+  line-height: 0.5rem;
+}
+
+.bar {
+  width: 50px;
+  height: 2px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+.list-header {
+  font-weight: 300;
 }

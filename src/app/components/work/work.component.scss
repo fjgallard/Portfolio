@@ -1,3 +1,38 @@
 .content {
   height: 100vh;
 }
+
+mat-toolbar {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.header {
+  margin: 0.5rem auto;
+}
+
+.headline {
+  font-weight: 300;
+  text-align: center;
+  line-height: 0.5rem;
+  margin: inherit;
+}
+
+.bar {
+  width: 60px;
+  height: 2px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .header {
+    margin: 2rem auto;
+  }
+
+  .headline {
+    font-size: 2.5rem;
+  }
+}

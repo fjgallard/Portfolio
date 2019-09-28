@@ -7,27 +7,14 @@
   flex-direction: column;
 }
 
-.header {
-  margin: 0.5rem auto;
-}
-
-.headline {
-  font-weight: 300;
-  text-align: center;
-  line-height: 0.5rem;
-}
-
-.bar {
-  width: 50px;
-  height: 2px;
-  background-color: black;
-  margin: 0 auto;
+.personal-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .list-header {
   font-weight: 300;
 }
-
 
 .profile {
   display: flex;
@@ -48,11 +35,24 @@
   #description {
     margin: 0 81.7px;
     font-size: 0.75rem;
-
   }
 }
 
 .skills {
   margin: 0.5rem auto;
   width: calc(100% - 32px);
+}
+
+@media only screen and (min-width: 600px) {
+
+  .personal-info {
+    flex-direction: row;
+
+    .skills {
+      width: auto;
+      margin: 0;
+      margin-right: 16px;
+    }
+  }
+
 }

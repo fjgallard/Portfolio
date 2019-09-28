@@ -27,5 +27,6 @@ export class SidenavComponent implements OnInit {
 
   scrollTo(section: string) {
     document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+    console.log('scrolling');
   }
 }

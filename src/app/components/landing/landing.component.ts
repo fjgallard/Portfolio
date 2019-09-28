@@ -14,5 +14,6 @@ export class LandingComponent implements OnInit {
 
   scrollTo(section: string) {
     document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+    console.log('scrolling');
   }
 }

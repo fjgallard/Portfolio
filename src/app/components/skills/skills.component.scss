@@ -8,7 +8,7 @@
 }
 
 .header {
-  margin: 1rem auto;
+  margin: 0.5rem auto;
 }
 
 .headline {
@@ -26,4 +26,33 @@
 
 .list-header {
   font-weight: 300;
+}
+
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem auto;
+  font-weight: 300;
+  text-align: center;
+
+  #dp {
+    height: 200px;
+    margin: auto;
+  }
+
+  #question {
+    font-weight: 500;
+  }
+
+  #description {
+    margin: 0 81.7px;
+    font-size: 0.75rem;
+
+  }
+}
+
+.skills {
+  margin: 0.5rem auto;
+  width: calc(100% - 32px);
 }

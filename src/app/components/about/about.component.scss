@@ -27,10 +27,31 @@
   width: 10rem;
 }
 
-#dp {
-  width: 50%;
-}
-
 .body {
   margin: 1rem 16px;
 }
+
+.profile {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 10px;
+
+  #dp {
+    grid-column-start: 1;
+    margin: auto;
+    width: 100%;
+  }
+
+  .details {
+    grid-column-start: 2;
+    font-weight: 300;
+    text-align: left;
+    line-height: 28px;
+
+    .title {
+      font-weight: 400;
+    }
+  }
+}
+
+

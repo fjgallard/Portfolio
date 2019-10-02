@@ -1,11 +1,15 @@
-<div class="content" appScrollSpy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+<div class="content" (sectionChange)="onSectionChange($event)">
   <section
   id="landing">
     <app-landing></app-landing>
   </section>
 
-  <section id="skills">
+  <!--<section id="skills">
     <app-skills></app-skills>
+  </section>-->
+
+  <section id="skills">
+    <app-about></app-about>
   </section>
 
   <section id="work">

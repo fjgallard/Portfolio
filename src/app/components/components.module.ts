@@ -8,10 +8,11 @@ import { ScrollSpyDirective } from '../directives/scroll-spy/scroll-spy.directiv
 import { WorkComponent } from './work/work.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
-  declarations: [LandingComponent, SkillsComponent, HomeComponent, ScrollSpyDirective, WorkComponent, BlogComponent, ContactComponent],
+  declarations: [LandingComponent, SkillsComponent, HomeComponent, ScrollSpyDirective, WorkComponent, BlogComponent, ContactComponent, AboutComponent],
   imports: [
     CommonModule,
     MaterialModule

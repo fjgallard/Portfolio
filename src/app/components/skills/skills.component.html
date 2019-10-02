@@ -4,7 +4,7 @@
     <div class="bar"></div>
   </div>
 
-  <div class="personal-info">
+  <div class="flex-column">
     <div class="profile">
       <img src="assets/bw-temp.jpg" alt="temp picture" id="dp">
       <h3 id="question">Who am I?</h3>
@@ -12,37 +12,28 @@
     </div>
 
     <div class="skills">
-    <mat-tab-group>
-      <mat-tab label="Frontend">
-        <mat-list>
-          <mat-list-item *ngFor="let skill of frontend">
-            <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
-            <h3 matLine>{{ skill.name }}</h3>
-            <p matLine>{{ skill.description }}</p>
-          </mat-list-item>
-        </mat-list>
-      </mat-tab>
-      <mat-tab label="Backend">
-        <mat-list>
-          <mat-list-item *ngFor="let skill of backend">
-            <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
-            <h3 matLine>{{ skill.name }}</h3>
-            <p matLine>{{ skill.description }}</p>
-          </mat-list-item>
-        </mat-list>
-      </mat-tab>
-      <mat-tab label="Frameworks/Stacks">
-        <mat-list>
-          <mat-list-item *ngFor="let skill of frameworks">
-            <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
-            <h3 matLine>{{ skill.name }}</h3>
-            <p matLine>{{ skill.description }}</p>
-          </mat-list-item>
-        </mat-list>
-      </mat-tab>
-    </mat-tab-group>
+      <mat-list>
+        <mat-list-item *ngFor="let skill of frontend">
+          <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
+          <h3 matLine>{{ skill.name }}</h3>
+          <p matLine>{{ skill.description }}</p>
+        </mat-list-item>
+      </mat-list>
+      <mat-list>
+        <mat-list-item *ngFor="let skill of backend">
+          <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
+          <h3 matLine>{{ skill.name }}</h3>
+          <p matLine>{{ skill.description }}</p>
+        </mat-list-item>
+      </mat-list>
+      <mat-list>
+        <mat-list-item *ngFor="let skill of frameworks">
+          <img matListAvatar [src]="skill.imageURL" [alt]="skill.name.toLowerCase()">
+          <h3 matLine>{{ skill.name }}</h3>
+          <p matLine>{{ skill.description }}</p>
+        </mat-list-item>
+      </mat-list>
     </div>
-
   </div>
 
 

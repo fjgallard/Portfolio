@@ -5,9 +5,13 @@
   </div>
 
   <div class="body">
-    <div class="profile">
-      <img src="assets/bw-temp.jpg" alt="temp picture" id="dp">
-      <div class="details">
+    <!-- Profile -->
+    <div class="profile" id="about">
+      <div class="grid-1 grid-margin">
+        <img src="assets/bw-temp.jpg" alt="temp picture" id="dp">
+      </div>
+
+      <div class="grid-2 grid-margin details">
         <h1 class="title">
           Who am I?
         </h1>
@@ -16,7 +20,25 @@
           and fix issues on the front-end for Web applications.
         </p>
       </div>
+    </div>
 
+    <!-- Skills -->
+    <div class="profile" id="skills">
+      <div class="grid-1 grid-margin details">
+        <h1 class="title">
+          Skills
+        </h1>
+        <p class="description">
+          I'm pretty good at these tools, languages, and framework(s).
+        </p>
+      </div>
+      <div class="grid-2">
+        <ul class="skills">
+          <li class="skill-tag" *ngFor="let skill of skills">
+            <span>{{ skill }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

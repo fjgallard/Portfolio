@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  skills = ['javascript', 'html', 'css', 'angular', 'java',
+            'firestore', 'nosql', 'git', 'confluence', 'jira'];
   constructor() { }
 
   ngOnInit() {

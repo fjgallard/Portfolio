@@ -9,7 +9,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { WorkExpComponent } from './work-exp/work-exp.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { WorkExpComponent } from './work-exp/work-exp.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class ComponentsModule { }

@@ -27,4 +27,25 @@
     </mat-card>
   </div>
 
+  <div class="contact-form-container">
+    <form [formGroup]="contactForm" class="contact-form">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea
+        matInput
+        placeholder="Message"
+        formControlName="message"
+        rows="5"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>
 </div>

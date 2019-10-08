@@ -11,6 +11,20 @@
   }
 }
 
+.contact-form-container {
+  margin: 0 16px 1rem;
+}
+
+.contact-form {
+  mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
 .mat-card-content {
   .avatar {
     display: flex;

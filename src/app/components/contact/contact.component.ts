@@ -11,14 +11,14 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
+  }
+
+  ngOnInit() {
     this.contactForm = this.fb.group({
       name: '',
       email: '',
       message: ''
     });
-  }
-
-  ngOnInit() {
   }
 
 }

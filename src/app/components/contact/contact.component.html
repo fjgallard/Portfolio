@@ -28,7 +28,7 @@
   </div>
 
   <div class="contact-form-container">
-    <form [formGroup]="contactForm" class="contact-form">
+    <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="send()">
       <mat-form-field>
         <input matInput placeholder="Name" formControlName="name">
       </mat-form-field>

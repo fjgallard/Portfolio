@@ -6,12 +6,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { ComponentsModule } from './components/components.module';
 import { UiModule } from './ui/ui.module';
-import { environment } from 'src/environments/environment';
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +19,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     MaterialModule,
     ComponentsModule,
     UiModule,
-    AngularFireModule.initializeApp(environment.firestore)
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MessagingService } from 'src/app/services/messaging.service';
 import { Message } from 'src/app/models/message.model';
+import { NotifyService } from 'src/app/services/notify.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,15 +15,12 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private messageService: MessagingService) {
+    private messageService: MessagingService,
+    private notifyService: NotifyService) {
   }
 
   ngOnInit() {
-    this.contactForm = this.fb.group({
-      name: '',
-      email: '',
-      message: ''
-    });
+    this.initContactForm();
   }
 
   send() {
@@ -32,6 +30,17 @@ export class ContactComponent implements OnInit {
       message: this.contactForm.value.message
     };
 
-    this.messageService.sendMessage(message);
+    this.messageService.sendMessage(message).then(() => {
+      this.initContactForm();
+      this.notifyService.openSnackBar('Message sent!');
+    });
+  }
+
+  private initContactForm() {
+    this.contactForm = this.fb.group({
+      name: '',
+      email: '',
+      message: ''
+    });
   }
 }

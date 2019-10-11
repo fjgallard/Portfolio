@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { ComponentsModule } from './components/components.module';
 import { UiModule } from './ui/ui.module';
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UiModule } from './ui/ui.module';
     BrowserAnimationsModule,
     MaterialModule,
     ComponentsModule,
-    UiModule
+    UiModule,
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

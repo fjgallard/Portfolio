@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { WorkExpComponent } from './work-exp/work-exp.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ServicesModule } from '../services/services.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServicesModule
   ]
 })
 export class ComponentsModule { }

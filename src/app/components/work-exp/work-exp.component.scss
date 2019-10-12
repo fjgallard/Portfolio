@@ -13,3 +13,16 @@
 #company {
   color: #FF4081;
 }
+
+@media only screen and (min-width: 600px) {
+  .body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

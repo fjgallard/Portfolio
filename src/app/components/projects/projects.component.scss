@@ -15,4 +15,21 @@
   .header {
     margin: 2rem auto;
   }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .project-card {
+      margin: 1rem;
+    }
+
+    .grid-row-1 {
+      grid-column-start: 1;
+    }
+
+    .grid-row-2 {
+      grid-column-start: 2;
+    }
+  }
 }

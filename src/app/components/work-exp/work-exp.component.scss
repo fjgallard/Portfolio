@@ -1,5 +1,9 @@
 .body {
   margin: 1rem 16px 1rem;
+
+  h1 {
+    font-weight: 300;
+  }
 }
 
 .mat-card-header-text {
@@ -9,6 +13,7 @@
 #company {
   color: #FF4081;
 }
+
 
 @media only screen and (min-width: 600px) {
   .body {
@@ -24,5 +29,12 @@
 
   .exp-card {
     margin: 1rem;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  .body {
+    display: flex;
+    justify-content: space-evenly;
   }
 }

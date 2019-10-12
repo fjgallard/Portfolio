@@ -1,7 +1,3 @@
-.content {
-  min-height: calc(100vh - 56px);
-}
-
 .projects {
   margin: 0 16px 1rem;
 
@@ -16,7 +12,31 @@
     margin: 2rem auto;
   }
 
-  .headline {
-    font-size: 2.5rem;
+  .projects {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    margin: 0;
+
+    .project-card {
+      margin: 1rem;
+      max-width: 360px;
+    }
+
+    .grid-row-1 {
+      grid-column-start: 1;
+    }
+
+    .grid-row-2 {
+      grid-column-start: 2;
+    }
+  }
+}
+
+@media only screen and (min-width: 860px) {
+
+  .projects {
+    display: flex;
+    justify-content: space-evenly;
   }
 }

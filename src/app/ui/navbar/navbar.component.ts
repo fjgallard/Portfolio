@@ -7,6 +7,12 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  onLandingPage: boolean;
+  onAboutPage: boolean;
+  onProjectsPage: boolean;
+  onExpPage: boolean;
+  onContactsPage: boolean;
+
   @Output() toggleEvent: EventEmitter<boolean>;
 
   constructor() {
@@ -14,6 +20,11 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.onLandingPage = false;
+    this.onAboutPage = false;
+    this.onProjectsPage = false;
+    this.onExpPage = false;
+    this.onContactsPage = false;
   }
 
   toggleSidebar() {

@@ -10,6 +10,10 @@ mat-toolbar {
   box-sizing: border-box;
 }
 
+.nav-links {
+  display: none;
+}
+
 #toggler {
   border-radius: 50%;
   padding: 0;
@@ -24,6 +28,7 @@ mat-toolbar {
   }
 
   .nav-links {
+    display: block;
     width: 100%;
   }
 
@@ -41,6 +46,10 @@ mat-toolbar {
     .link:hover {
       color: #FF4081;
       cursor: pointer;
+    }
+
+    .active {
+      color: #FF4081;
     }
   }
 

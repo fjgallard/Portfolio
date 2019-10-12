@@ -18,7 +18,37 @@ mat-toolbar {
 }
 
 @media only screen and (min-width: 600px) {
+
+  .nav-content {
+    justify-content: center;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+    .link {
+      font-weight: 300;
+      list-style: none;
+      margin: 0 1rem;
+    }
+
+    .link:hover {
+      color: #FF4081;
+      cursor: pointer;
+    }
+  }
+
   mat-toolbar {
     width: calc(100% - 16px);
+  }
+
+  #toggler {
+    display: none;
   }
 }

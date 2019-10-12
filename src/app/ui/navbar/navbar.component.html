@@ -1,5 +1,14 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
   <mat-toolbar-row class="nav-content">
+    <div class="nav-links">
+      <ul class="links">
+        <li class="link" (click)="scrollTo('landing')">Home</li>
+        <li class="link" (click)="scrollTo('skills')">About Me</li>
+        <li class="link" (click)="scrollTo('projects')">Projects</li>
+        <li class="link" (click)="scrollTo('work-exp')">Experience</li>
+        <li class="link" (click)="scrollTo('contact')">Contact</li>
+      </ul>
+    </div>
     <button mat-button id="toggler" (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>

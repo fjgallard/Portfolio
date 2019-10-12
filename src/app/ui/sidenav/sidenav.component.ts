@@ -23,10 +23,10 @@ export class SidenavComponent implements OnInit {
 
   sideNavLinkClicked(section: string) {
     this.closeSideNav();
+    this.scrollTo(section);
   }
 
   scrollTo(section: string) {
     document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
-    console.log('scrolling');
   }
 }

@@ -20,4 +20,8 @@ export class NavbarComponent implements OnInit {
     this.toggleEvent.emit();
   }
 
+  scrollTo(section: string) {
+    document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+  }
+
 }

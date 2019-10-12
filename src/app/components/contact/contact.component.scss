@@ -41,3 +41,32 @@
     text-align: center;
   }
 }
+
+.contact-form-container {
+  .contact-intro {
+    color: #FF4081;
+    text-align: center;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+
+  .contact {
+    display: flex;
+    justify-content: space-around;
+
+    .contact-card {
+      width: 50%;
+      max-width: 328px;
+    }
+  }
+
+  .contact-form-container {
+    width: 50%;
+    max-width: 440px;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+}

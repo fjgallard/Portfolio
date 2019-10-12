@@ -2,10 +2,9 @@ mat-toolbar {
   z-index: 999999 !important;
   position: fixed;
   top: 0;
-  width: calc(100% - 16px);
 }
 
-.content {
+.nav-content {
   display: flex;
   justify-content: flex-end;
   box-sizing: border-box;
@@ -16,4 +15,10 @@ mat-toolbar {
   padding: 0;
   width: 36px;
   min-width: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  mat-toolbar {
+    width: calc(100% - 16px);
+  }
 }

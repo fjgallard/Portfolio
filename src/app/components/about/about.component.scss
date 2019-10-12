@@ -64,3 +64,35 @@
   justify-content: center;
 }
 
+@media only screen and (min-width: 600px) {
+
+  #dp {
+    max-width: 330px;
+  }
+
+  .profile {
+
+    .details {
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .profile {
+    margin: 1rem 5rem;
+
+    .grid-margin {
+      margin: 0 2.5rem;
+    }
+
+    .grid-1 {
+      text-align: right;
+      margin: 0;
+    }
+  }
+
+  #skills .details {
+    text-align: right;
+  }
+}

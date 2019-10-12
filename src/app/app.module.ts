@@ -19,7 +19,6 @@ import { ServicesModule } from './services/services.module';
     MaterialModule,
     ComponentsModule,
     UiModule,
-    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

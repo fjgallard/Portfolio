@@ -2,6 +2,7 @@ mat-toolbar {
   z-index: 999999 !important;
   position: fixed;
   top: 0;
+  width: calc(100% - 16px);
 }
 
 .content {

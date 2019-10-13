@@ -27,16 +27,16 @@ export class NavbarComponent implements OnInit {
       // tslint:disable-next-line: deprecation
       // console.log(e.srcElement.scrollTop);
       const scrollPosition = e.srcElement.scrollTop;
-      if (scrollPosition < 704) {
+      if (scrollPosition < 300) {
         this.resetActiveLinks();
         this.onLandingPage = true;
-      } else if (scrollPosition < 1464) {
+      } else if (scrollPosition < 1000) {
         this.resetActiveLinks();
         this.onAboutPage = true;
-      } else if (scrollPosition < 2224) {
+      } else if (scrollPosition < 1800) {
         this.resetActiveLinks();
         this.onProjectsPage = true;
-      } else if (scrollPosition < 2984) {
+      } else if (scrollPosition < 2500) {
         this.resetActiveLinks();
         this.onExpPage = true;
       } else {

@@ -12,8 +12,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   flex-direction: column;
   justify-content: center;
 
-  background-color: #3f51b5;
-  color: white;
+  // background-color: #3f51b5;
+  // color: white;
+  background: #F5F5F5;
+  color: black;
+
   margin: 0;
   padding: 1rem 0;
   height: calc(198px - 2rem);
@@ -27,7 +30,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 
   .bar {
-    background-color: white;
+    // background-color: white;
+    background-color: black;
     width: 10rem;
     height: 2px;
     margin: 0 auto;
@@ -35,7 +39,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .navbar-allowance {
-  margin-top: -56px;
   padding-top: 56px;
 }
 

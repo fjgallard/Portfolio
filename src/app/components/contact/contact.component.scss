@@ -1,6 +1,19 @@
+.content {
+  background: white;
+}
+
+.header {
+  background-color: #3f51b5;
+  color: white;
+
+  .bar {
+    background-color: white;
+  }
+}
 
 .contact {
   margin: 0 16px 1rem;
+  background: white;
 
   .contact-card {
     margin-top: 1rem;

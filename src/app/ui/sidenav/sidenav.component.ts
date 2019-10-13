@@ -22,11 +22,14 @@ export class SidenavComponent implements OnInit {
   }
 
   sideNavLinkClicked(section: string) {
+    // this.closeSideNav();
+    this.scrollTo(section);
     this.closeSideNav();
   }
 
   scrollTo(section: string) {
-    document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
-    console.log('scrolling');
+    // const x = document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+    console.log('test');
+    document.querySelector('.mat-sidenav-content').scrollTop = 300;
   }
 }

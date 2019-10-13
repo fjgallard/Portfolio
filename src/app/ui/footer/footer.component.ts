@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  linkedinActive = false;
+  githubActive = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  activateLink(link: string) {
+    this.resetActivatedLinks();
+    if (link === 'linkedin') {
+      this.linkedinActive = true;
+    } else if (link === 'github') {
+      this.githubActive = true;
+    }
+  }
+
+  private resetActivatedLinks() {
+    this.linkedinActive = false;
+    this.githubActive = false;
   }
 
 }

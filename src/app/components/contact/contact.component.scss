@@ -16,7 +16,7 @@
   background: white;
 
   .contact-card {
-    margin-top: 1rem;
+    margin: 1rem;
     max-height: 162.05px;
   }
 }
@@ -79,8 +79,8 @@
   .contact-form-container {
     width: 50%;
     max-width: 440px;
-    margin: auto;
-    margin-top: 3rem;
+    margin: 3rem auto 0;
+    padding-bottom: 1rem;
   }
 
 }

@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
         this.onAboutPage = true;
       } else if (scrollPosition < 1800) {
         this.onProjectsPage = true;
-      } else if (scrollPosition < 2500) {
+      } else if (scrollPosition < 2776) {
         this.onExpPage = true;
       } else {
         this.onContactsPage = true;

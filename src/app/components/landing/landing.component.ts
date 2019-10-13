@@ -13,6 +13,12 @@ export class LandingComponent implements OnInit {
   }
 
   scrollTo(section: string) {
-    document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+    // document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+    if (window.outerWidth < 600) {
+      document.querySelector('.mat-sidenav-content').scrollTo({ top: 757, behavior: 'smooth'});
+    } else {
+      document.querySelector('.mat-sidenav-content').scrollTo({ top: 703, behavior: 'smooth'});
+    }
+
   }
 }

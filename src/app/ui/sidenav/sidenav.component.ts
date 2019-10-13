@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidenav',
@@ -29,7 +28,16 @@ export class SidenavComponent implements OnInit {
 
   scrollTo(section: string) {
     // const x = document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
-    console.log('test');
-    document.querySelector('.mat-sidenav-content').scrollTop = 300;
+    if (section === 'landing') {
+      document.querySelector('.mat-sidenav-content').scrollTo({ top: 0, behavior: 'smooth'});
+    } else if (section === 'skills') {
+      document.querySelector('.mat-sidenav-content').scrollTo({ top: 757, behavior: 'smooth'});
+    } else if (section === 'projects') {
+      document.querySelector('.mat-sidenav-content').scrollTo({ top: 1559, behavior: 'smooth'});
+    } else if (section === 'work-exp') {
+      document.querySelector('.mat-sidenav-content').scrollTo({ top: 2849, behavior: 'smooth'});
+    } else {
+      document.querySelector('.mat-sidenav-content').scrollTo({ top: 3609, behavior: 'smooth'});
+    }
   }
 }

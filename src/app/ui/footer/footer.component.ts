@@ -19,8 +19,10 @@ export class FooterComponent implements OnInit {
     this.resetActivatedLinks();
     if (link === 'linkedin') {
       this.linkedinActive = true;
+      window.location.href = 'https://www.linkedin.com/in/francis-jomer-gallardo-7bb220103';
     } else if (link === 'github') {
       this.githubActive = true;
+      window.location.href = 'https://github.com/fjgallard';
     }
   }
 

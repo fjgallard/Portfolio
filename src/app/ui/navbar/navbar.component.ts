@@ -20,11 +20,30 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.onLandingPage = false;
-    this.onAboutPage = false;
-    this.onProjectsPage = false;
-    this.onExpPage = false;
-    this.onContactsPage = false;
+    this.resetActiveLinks();
+    this.onLandingPage = true;
+    // a little hacky, but placing it here instead of side nav
+    document.querySelector('.mat-sidenav-content').addEventListener('scroll', (e: any) => {
+      // tslint:disable-next-line: deprecation
+      // console.log(e.srcElement.scrollTop);
+      const scrollPosition = e.srcElement.scrollTop;
+      if (scrollPosition < 704) {
+        this.resetActiveLinks();
+        this.onLandingPage = true;
+      } else if (scrollPosition < 1464) {
+        this.resetActiveLinks();
+        this.onAboutPage = true;
+      } else if (scrollPosition < 2224) {
+        this.resetActiveLinks();
+        this.onProjectsPage = true;
+      } else if (scrollPosition < 2984) {
+        this.resetActiveLinks();
+        this.onExpPage = true;
+      } else {
+        this.resetActiveLinks();
+        this.onContactsPage = true;
+      }
+    });
   }
 
   toggleSidebar() {
@@ -33,6 +52,14 @@ export class NavbarComponent implements OnInit {
 
   scrollTo(section: string) {
     document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+  }
+
+  private resetActiveLinks() {
+    this.onLandingPage = false;
+    this.onAboutPage = false;
+    this.onProjectsPage = false;
+    this.onExpPage = false;
+    this.onContactsPage = false;
   }
 
 }

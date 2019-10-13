@@ -15,10 +15,6 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit() {
-    document.querySelector('.mat-sidenav-content').addEventListener('scroll', (e) => {
-      // tslint:disable-next-line: deprecation
-      console.log(e.srcElement.scrollTop);
-    });
   }
 
   closeSideNav() {

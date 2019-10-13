@@ -2,11 +2,11 @@
   <mat-toolbar-row class="nav-content">
     <div class="nav-links">
       <ul class="links">
-        <li class="link" (click)="scrollTo('landing')">Home</li>
-        <li class="link" (click)="scrollTo('skills')">About Me</li>
-        <li class="link" (click)="scrollTo('projects')">Projects</li>
-        <li class="link" (click)="scrollTo('work-exp')">Experience</li>
-        <li class="link" (click)="scrollTo('contact')">Contact</li>
+        <li [ngClass]="{active: onLandingPage}" class="link" (click)="scrollTo('landing')">Home</li>
+        <li [ngClass]="{active: onAboutPage}" class="link" (click)="scrollTo('skills')">About Me</li>
+        <li [ngClass]="{active: onProjectsPage}" class="link" (click)="scrollTo('projects')">Projects</li>
+        <li [ngClass]="{active: onExpPage}" class="link" (click)="scrollTo('work-exp')">Experience</li>
+        <li [ngClass]="{active: onContactsPage}" class="link" (click)="scrollTo('contact')">Contact</li>
       </ul>
     </div>
     <button mat-button id="toggler" (click)="toggleSidebar()">

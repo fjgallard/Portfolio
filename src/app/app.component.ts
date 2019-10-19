@@ -46,7 +46,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
     this.sections = elemArr.map(element => {
       return {
         id: element.id,
-        position: sum += element.scrollHeight, // navbar height
+        position: sum += element.scrollHeight,
         scrollHeight: element.scrollHeight
       };
     });

@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, AfterViewInit, Input } from '@angular/core';
+import { Section } from 'src/app/models/section.model';
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +14,11 @@ export class NavbarComponent implements OnInit {
   onExpPage: boolean;
   onContactsPage: boolean;
 
+  @Input() sections: Section[];
+
+  container: Element;
+  sectionPositions: number[];
+
   @Output() toggleEvent: EventEmitter<boolean>;
 
   constructor() {
@@ -20,12 +26,37 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.container = document.querySelector('.mat-sidenav-content');
+
     this.resetActiveLinks();
     this.onLandingPage = true;
-    // a little hacky, but placing it here instead of side nav
-    document.querySelector('.mat-sidenav-content').addEventListener('scroll', (e: any) => {
+
+    this.initActiveLinkListener();
+  }
+
+  toggleSidebar() {
+    this.toggleEvent.emit();
+  }
+
+  scrollTo(sectionName: string) {
+    this.sections.forEach(section => {
+      if (section.id === sectionName) {
+        this.container.scrollTo({top: section.position - section.scrollHeight, behavior: 'smooth'});
+      }
+    });
+  }
+
+  private resetActiveLinks() {
+    this.onLandingPage = false;
+    this.onAboutPage = false;
+    this.onProjectsPage = false;
+    this.onExpPage = false;
+    this.onContactsPage = false;
+  }
+
+  private initActiveLinkListener() {
+    this.container.addEventListener('scroll', (e: any) => {
       // tslint:disable-next-line: deprecation
-      console.log(e.srcElement.scrollTop);
       const scrollPosition = e.srcElement.scrollTop;
       this.resetActiveLinks();
 
@@ -41,42 +72,6 @@ export class NavbarComponent implements OnInit {
         this.onContactsPage = true;
       }
     });
-  }
-
-  toggleSidebar() {
-    this.toggleEvent.emit();
-  }
-
-  scrollTo(section: string) {
-    // document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
-    if (section === 'landing') {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 0, behavior: 'smooth'});
-    } else if (section === 'skills') {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 703, behavior: 'smooth'});
-    } else if (section === 'projects') {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 1438, behavior: 'smooth'});
-    } else if (section === 'work-exp') {
-      if (window.outerWidth < 860) {
-        document.querySelector('.mat-sidenav-content').scrollTo({ top: 2218, behavior: 'smooth'});
-      } else {
-        document.querySelector('.mat-sidenav-content').scrollTo({ top: 2282, behavior: 'smooth'});
-      }
-    } else {
-      if (window.outerWidth < 860) {
-        document.querySelector('.mat-sidenav-content').scrollTo({ top: 2980, behavior: 'smooth'});
-      } else {
-        document.querySelector('.mat-sidenav-content').scrollTo({ top: 3052, behavior: 'smooth'});
-      }
-
-    }
-  }
-
-  private resetActiveLinks() {
-    this.onLandingPage = false;
-    this.onAboutPage = false;
-    this.onProjectsPage = false;
-    this.onExpPage = false;
-    this.onContactsPage = false;
   }
 
 }

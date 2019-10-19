@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, AfterViewChecked, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import { Section } from './models/section.model';
 
 @Component({
@@ -13,10 +13,15 @@ export class AppComponent implements AfterViewChecked {
   sections: Section[];
   sectionPositions: number[];
 
+  navbarHeight: number;
+
   constructor(private cdRef: ChangeDetectorRef) {}
 
   ngAfterViewChecked(): void {
     this.initSections();
+    const navbar = document.querySelector('.nav-content');
+    this.navbarHeight = navbar.clientHeight;
+
     this.cdRef.detectChanges();
   }
 
@@ -30,6 +35,7 @@ export class AppComponent implements AfterViewChecked {
 
   private initSections() {
     const container = document.querySelector('.mat-sidenav-content');
+
     const elements = container.getElementsByTagName('section');
     const elemArr = Array.from(elements);
 
@@ -37,7 +43,7 @@ export class AppComponent implements AfterViewChecked {
     this.sections = elemArr.map(element => {
       return {
         id: element.id,
-        position: sum += element.scrollHeight,
+        position: sum += element.scrollHeight, // navbar height
         scrollHeight: element.scrollHeight
       };
     });

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Section } from 'src/app/models/section.model';
 
 @Component({
@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   onContactsPage: boolean;
 
   @Input() sections: Section[];
+  @Input() navbarHeight: number;
 
   container: Element;
   sectionPositions: number[];
@@ -41,7 +42,7 @@ export class NavbarComponent implements OnInit {
   scrollTo(sectionName: string) {
     this.sections.forEach(section => {
       if (section.id === sectionName) {
-        this.container.scrollTo({top: section.position - section.scrollHeight, behavior: 'smooth'});
+        this.container.scrollTo({top: section.position - section.scrollHeight - this.navbarHeight, behavior: 'smooth'});
       }
     });
   }

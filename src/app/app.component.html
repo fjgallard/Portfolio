@@ -1,7 +1,12 @@
 <app-sidenav
   [(opened)]="opened"
+  [navbarHeight]="navbarHeight"
+  [sections]="sections"
   (toggleEvent)="updateNav()">
-  <app-navbar [(sections)]="sections" (toggleEvent)="toggleSideNav()"></app-navbar>
+  <app-navbar 
+  [sections]="sections"
+  [navbarHeight]="navbarHeight"
+  (toggleEvent)="toggleSideNav()"></app-navbar>
   <router-outlet></router-outlet>
 </app-sidenav>
 

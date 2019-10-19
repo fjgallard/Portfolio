@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Section } from 'src/app/models/section.model';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,12 +9,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SidenavComponent implements OnInit {
 
   @Input() opened = false;
+  @Input() sections: Section[];
   @Output() toggleEvent = new EventEmitter<boolean>();
+  container: Element;
+  @Input() navbarHeight: number;
 
   constructor() {
   }
 
   ngOnInit() {
+    this.container = document.querySelector('.mat-sidenav-content');
   }
 
   closeSideNav() {
@@ -21,23 +26,15 @@ export class SidenavComponent implements OnInit {
   }
 
   sideNavLinkClicked(section: string) {
-    // this.closeSideNav();
     this.scrollTo(section);
     this.closeSideNav();
   }
 
-  scrollTo(section: string) {
-    // const x = document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
-    if (section === 'landing') {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 0, behavior: 'smooth'});
-    } else if (section === 'skills') {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 757, behavior: 'smooth'});
-    } else if (section === 'projects') {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 1559, behavior: 'smooth'});
-    } else if (section === 'work-exp') {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 2849, behavior: 'smooth'});
-    } else {
-      document.querySelector('.mat-sidenav-content').scrollTo({ top: 3609, behavior: 'smooth'});
-    }
+  scrollTo(sectionName: string) {
+    this.sections.forEach(section => {
+      if (section.id === sectionName) {
+        this.container.scrollTo({top: section.position - section.scrollHeight - this.navbarHeight, behavior: 'smooth'});
+      }
+    });
   }
 }

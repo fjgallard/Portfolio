@@ -10,15 +10,15 @@ export class SidenavComponent implements OnInit {
 
   @Input() opened = false;
   @Input() sections: Section[];
-  @Output() toggleEvent = new EventEmitter<boolean>();
-  container: Element;
+  @Input() container: Element;
   @Input() navbarHeight: number;
+
+  @Output() toggleEvent = new EventEmitter<boolean>();
 
   constructor() {
   }
 
   ngOnInit() {
-    this.container = document.querySelector('.mat-sidenav-content');
   }
 
   closeSideNav() {

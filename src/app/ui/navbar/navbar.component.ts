@@ -7,6 +7,7 @@ import { Section } from 'src/app/models/section.model';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  private SCROLL_OFFSET = 260;
 
   onLandingPage: boolean;
   onAboutPage: boolean;
@@ -16,9 +17,7 @@ export class NavbarComponent implements OnInit {
 
   @Input() sections: Section[];
   @Input() navbarHeight: number;
-
-  container: Element;
-  sectionPositions: number[];
+  @Input() container: Element;
 
   @Output() toggleEvent: EventEmitter<boolean>;
 
@@ -27,8 +26,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.container = document.querySelector('.mat-sidenav-content');
-
     this.resetActiveLinks();
     this.onLandingPage = true;
 
@@ -57,17 +54,16 @@ export class NavbarComponent implements OnInit {
 
   private initActiveLinkListener() {
     this.container.addEventListener('scroll', (e: any) => {
-      // tslint:disable-next-line: deprecation
       const scrollPosition = e.srcElement.scrollTop;
       this.resetActiveLinks();
-
-      if (scrollPosition < CheckPoint.HOME) {
+      // console.log(this.sections);
+      if (scrollPosition < this.sections[0].position - (this.sections[0].scrollHeight / 2)) {
         this.onLandingPage = true;
-      } else if (scrollPosition < CheckPoint.ABOUT) {
+      } else if (scrollPosition < this.sections[1].position - (this.sections[1].scrollHeight / 2)) {
         this.onAboutPage = true;
-      } else if (scrollPosition < CheckPoint.PROJECTS) {
+      } else if (scrollPosition < this.sections[2].position - (this.sections[2].scrollHeight / 2)) {
         this.onProjectsPage = true;
-      } else if (scrollPosition < CheckPoint.EXPERIENCE) {
+      } else if (scrollPosition < this.sections[3].position - (this.sections[3].scrollHeight / 2)) {
         this.onExpPage = true;
       } else {
         this.onContactsPage = true;

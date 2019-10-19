@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, AfterViewChecked, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, AfterViewChecked, ChangeDetectorRef, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Section } from './models/section.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Section } from './models/section.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewChecked {
+export class AppComponent implements OnInit, AfterViewChecked {
   title = 'github-portfolio';
   opened = false;
 
@@ -14,8 +14,13 @@ export class AppComponent implements AfterViewChecked {
   sectionPositions: number[];
 
   navbarHeight: number;
+  container: Element;
 
   constructor(private cdRef: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.container = document.querySelector('.mat-sidenav-content');
+  }
 
   ngAfterViewChecked(): void {
     this.initSections();
@@ -34,9 +39,7 @@ export class AppComponent implements AfterViewChecked {
   }
 
   private initSections() {
-    const container = document.querySelector('.mat-sidenav-content');
-
-    const elements = container.getElementsByTagName('section');
+    const elements = this.container.getElementsByTagName('section');
     const elemArr = Array.from(elements);
 
     let sum = 0;

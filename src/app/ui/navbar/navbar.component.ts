@@ -56,6 +56,7 @@ export class NavbarComponent implements OnInit {
     this.container.addEventListener('scroll', (e: any) => {
       const scrollPosition = e.srcElement.scrollTop;
       this.resetActiveLinks();
+      // console.log(scrollPosition);
       // console.log(this.sections);
       if (scrollPosition < this.sections[0].position - (this.sections[0].scrollHeight / 2)) {
         this.onLandingPage = true;

@@ -8,15 +8,10 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  currentSection = 'landing';
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  onSectionChange(sectionId: string) {
-    this.currentSection = sectionId;
   }
 
 }

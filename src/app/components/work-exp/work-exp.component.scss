@@ -1,9 +1,17 @@
 .content {
-  min-height: calc(100vh - 56px);
+  background: white;
+}
+
+.header {
+  background: white;
 }
 
 .body {
   margin: 1rem 16px 1rem;
+
+  h1 {
+    font-weight: 300;
+  }
 }
 
 .mat-card-header-text {
@@ -12,4 +20,29 @@
 
 #company {
   color: #FF4081;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .exp-card {
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  .body {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }

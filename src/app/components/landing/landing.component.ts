@@ -12,7 +12,13 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
   }
 
-  scrollTo(section: string) {
-    document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
+  scroll() {
+    const navbar = document.querySelector('.nav-content');
+    const container = document.querySelector('.mat-sidenav-content');
+
+    container.scrollTo({
+      top: document.querySelector('#landing').scrollHeight - navbar.clientHeight,
+      behavior: 'smooth'
+    });
   }
 }

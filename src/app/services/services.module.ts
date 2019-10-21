@@ -7,6 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { NotifyService } from './notify.service';
+import { MaterialModule } from '../material.module';
 @NgModule({
   declarations: [],
   imports: [
@@ -14,10 +16,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firestore),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MaterialModule
   ],
   providers: [
-    MessagingService
+    MessagingService,
+    NotifyService
   ]
 })
 export class ServicesModule { }

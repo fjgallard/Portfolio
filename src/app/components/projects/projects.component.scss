@@ -1,5 +1,5 @@
 .content {
-  min-height: calc(100vh - 56px);
+  background: #F5F5F5;
 }
 
 .projects {
@@ -12,11 +12,32 @@
 
 @media only screen and (min-width: 600px) {
 
-  .header {
-    margin: 2rem auto;
-  }
+  .projects {
+    display: grid;
+    grid-template-columns: 50% 50%;
 
-  .headline {
-    font-size: 2.5rem;
+    margin: 0;
+    padding-bottom: 3rem;
+
+    .project-card {
+      margin: 1rem;
+      max-width: 360px;
+    }
+
+    .grid-row-1 {
+      grid-column-start: 1;
+    }
+
+    .grid-row-2 {
+      grid-column-start: 2;
+    }
+  }
+}
+
+@media only screen and (min-width: 860px) {
+
+  .projects {
+    display: flex;
+    justify-content: space-evenly;
   }
 }

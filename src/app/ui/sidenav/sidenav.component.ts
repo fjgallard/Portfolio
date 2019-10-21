@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Section } from 'src/app/models/section.model';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,6 +9,10 @@ import { Observable } from 'rxjs';
 export class SidenavComponent implements OnInit {
 
   @Input() opened = false;
+  @Input() sections: Section[];
+  @Input() container: Element;
+  @Input() navbarHeight: number;
+
   @Output() toggleEvent = new EventEmitter<boolean>();
 
   constructor() {
@@ -22,11 +26,15 @@ export class SidenavComponent implements OnInit {
   }
 
   sideNavLinkClicked(section: string) {
+    this.scrollTo(section);
     this.closeSideNav();
   }
 
-  scrollTo(section: string) {
-    document.querySelector('#' + section).scrollIntoView({behavior: 'smooth'});
-    console.log('scrolling');
+  scrollTo(sectionName: string) {
+    this.sections.forEach(section => {
+      if (section.id === sectionName) {
+        this.container.scrollTo({top: section.position - section.scrollHeight - this.navbarHeight, behavior: 'smooth'});
+      }
+    });
   }
 }

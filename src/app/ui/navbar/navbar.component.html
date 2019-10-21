@@ -1,5 +1,14 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-  <mat-toolbar-row class="content">
+  <mat-toolbar-row #navbar class="nav-content">
+    <div class="nav-links">
+      <ul class="links">
+        <li [ngClass]="{active: onLandingPage}" class="link" (click)="scrollTo('landing')">Home</li>
+        <li [ngClass]="{active: onAboutPage}" class="link" (click)="scrollTo('skills')">About Me</li>
+        <li [ngClass]="{active: onProjectsPage}" class="link" (click)="scrollTo('projects')">Projects</li>
+        <li [ngClass]="{active: onExpPage}" class="link" (click)="scrollTo('work-exp')">Experience</li>
+        <li [ngClass]="{active: onContactsPage}" class="link" (click)="scrollTo('contact')">Contact</li>
+      </ul>
+    </div>
     <button mat-button id="toggler" (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>

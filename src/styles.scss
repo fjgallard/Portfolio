@@ -3,13 +3,20 @@
 html, body { overflow: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.content {
+  min-height: calc(100vh - 56px);
+}
+
 .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  background-color: #3f51b5;
-  color: white;
+  // background-color: #3f51b5;
+  // color: white;
+  background: #F5F5F5;
+  color: black;
+
   margin: 0;
   padding: 1rem 0;
   height: calc(198px - 2rem);
@@ -23,16 +30,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 
   .bar {
-    background-color: white;
+    // background-color: white;
+    background-color: black;
     width: 10rem;
     height: 2px;
     margin: 0 auto;
   }
-}
-
-.navbar-allowance {
-  margin-top: -56px;
-  padding-top: 56px;
 }
 
 .col-layout {
@@ -43,11 +46,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media only screen and (min-width: 600px) {
 
-  .header {
-    margin: 2rem auto;
+  .content {
+    min-height: 100vh;
   }
 
   .headline {
     font-size: 2.5rem;
   }
+
 }

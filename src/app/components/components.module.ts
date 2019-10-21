@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { WorkExpComponent } from './work-exp/work-exp.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ServicesModule } from '../services/services.module';
+import { UiModule } from '../ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ServicesModule } from '../services/services.module';
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
-    ServicesModule
+    ServicesModule,
+    UiModule
   ]
 })
 export class ComponentsModule { }

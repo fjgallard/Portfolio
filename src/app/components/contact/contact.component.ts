@@ -28,9 +28,9 @@ export class ContactComponent implements OnInit {
     this.isSending = true;
 
     this.contactForm = this.fb.group({
-      name: new FormControl({ value: '', disabled: this.isSending }),
-      email: new FormControl({ value: '', disabled: this.isSending }),
-      message: new FormControl({ value: '', disabled: this.isSending })
+      name: new FormControl({ value: this.contactForm.value.name, disabled: this.isSending }),
+      email: new FormControl({ value: this.contactForm.value.email, disabled: this.isSending }),
+      message: new FormControl({ value: this.contactForm.value.message, disabled: this.isSending })
     });
 
     const message: Message = {

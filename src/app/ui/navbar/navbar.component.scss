@@ -28,8 +28,18 @@ mat-toolbar {
   }
 
   .nav-links {
-    display: block;
+    display: flex;
     width: 100%;
+    justify-content: space-around;
+
+    .call-to-action {
+      display: flex;
+      align-items: center;
+
+      button {
+        height: 36px;
+      }
+    }
   }
 
   .links {

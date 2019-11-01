@@ -8,9 +8,6 @@
         <li [ngClass]="{active: onExpPage}" class="link" (click)="scrollTo('work-exp')">Experience</li>
         <li [ngClass]="{active: onContactsPage}" class="link" (click)="scrollTo('contact')">Contact</li>
       </ul>
-      <div class="call-to-action">
-        <button mat-flat-button color="accent" (click)="downloadResume()">Download Resume</button>
-      </div>
     </div>
     <button mat-button id="toggler" (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>

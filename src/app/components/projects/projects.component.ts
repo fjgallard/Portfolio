@@ -12,4 +12,8 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
   }
 
+  goTo(link: string) {
+    window.open(link);
+  }
+
 }

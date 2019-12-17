@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Section } from 'src/app/models/section.model';
+import { RESUME_URL } from 'src/app/models/constants';
 
 @Component({
   selector: 'app-navbar',
@@ -42,6 +43,10 @@ export class NavbarComponent implements OnInit {
         this.container.scrollTo({top: section.position - section.scrollHeight - this.navbarHeight, behavior: 'smooth'});
       }
     });
+  }
+
+  downloadResume() {
+    window.open(RESUME_URL);
   }
 
   private resetActiveLinks() {

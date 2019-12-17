@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RESUME_URL } from 'src/app/models/constants';
 
 @Component({
   selector: 'app-about',
@@ -12,6 +13,10 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  downloadResume() {
+    window.open(RESUME_URL);
   }
 
 }

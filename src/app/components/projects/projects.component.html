@@ -10,17 +10,20 @@
         <mat-card-header color="primary">
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>Blog App</mat-card-title>
-          <mat-card-subtitle>A... Blogging Application</mat-card-subtitle>
+          <mat-card-subtitle>A Blogging Application</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="assets/blog-img.png" alt="Blog Project">
         <mat-card-content>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus nulla dolorum, esse a aut error minima deleniti voluptates quas minus ullam. Beatae, animi iusto corporis veritatis facere maxime culpa?
+            A barebones blog!
+          </p>
+          <p>
+            Didn't use Wordpress or any CMS or CMS-like plugin - just basic CRUD with Firestore and a Rich Text Editor.
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Github</button>
-          <button mat-button>Go to Live</button>
+          <button mat-button (click)="goTo('https://github.com/fjgallard/blog')">Github</button>
+          <button mat-button (click)="goTo('https://blog-60969.firebaseapp.com/articles')">Go to Live</button>
         </mat-card-actions>
       </mat-card>
       <mat-card class="project-card grid-row-2">

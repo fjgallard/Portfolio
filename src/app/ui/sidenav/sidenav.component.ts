@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Section } from 'src/app/models/section.model';
+import { RESUME_URL } from 'src/app/models/constants';
 
 @Component({
   selector: 'app-sidenav',
@@ -36,5 +37,9 @@ export class SidenavComponent implements OnInit {
         this.container.scrollTo({top: section.position - section.scrollHeight - this.navbarHeight, behavior: 'smooth'});
       }
     });
+  }
+
+  downloadResume() {
+    window.open(RESUME_URL);
   }
 }

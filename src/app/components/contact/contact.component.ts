@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { MessagingService } from 'src/app/services/messaging.service';
 import { Message } from 'src/app/models/message.model';
 import { NotifyService } from 'src/app/services/notify.service';
@@ -12,6 +12,7 @@ import { NotifyService } from 'src/app/services/notify.service';
 export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
+  isSending = false;
 
   constructor(
     private fb: FormBuilder,
@@ -24,6 +25,14 @@ export class ContactComponent implements OnInit {
   }
 
   send() {
+    this.isSending = true;
+
+    this.contactForm = this.fb.group({
+      name: new FormControl({ value: this.contactForm.value.name, disabled: this.isSending }),
+      email: new FormControl({ value: this.contactForm.value.email, disabled: this.isSending }),
+      message: new FormControl({ value: this.contactForm.value.message, disabled: this.isSending })
+    });
+
     const message: Message = {
       name: this.contactForm.value.name,
       email: this.contactForm.value.email,
@@ -32,6 +41,7 @@ export class ContactComponent implements OnInit {
 
     this.messageService.sendMessage(message).then(() => {
       this.initContactForm();
+      this.isSending = false;
       this.notifyService.openSnackBar('Message sent!');
     });
   }

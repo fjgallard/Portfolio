@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GITHUB_URL, LINKEDIN_URL } from 'src/app/models/constants';
 
 @Component({
   selector: 'app-footer',
@@ -19,11 +20,15 @@ export class FooterComponent implements OnInit {
     this.resetActivatedLinks();
     if (link === 'linkedin') {
       this.linkedinActive = true;
-      window.location.href = 'https://www.linkedin.com/in/francis-jomer-gallardo-7bb220103';
+      window.open(GITHUB_URL);
     } else if (link === 'github') {
       this.githubActive = true;
-      window.location.href = 'https://github.com/fjgallard';
+      window.open(LINKEDIN_URL);
     }
+  }
+
+  reset() {
+    this.resetActivatedLinks();
   }
 
   private resetActivatedLinks() {

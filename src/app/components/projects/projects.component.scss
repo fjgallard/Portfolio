@@ -14,8 +14,8 @@
 @media only screen and (min-width: 600px) {
 
   .projects {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    // display: grid;
+    // grid-template-columns: 50% 50%;
 
     margin: 0;
     padding-bottom: 3rem;
@@ -25,13 +25,13 @@
       max-width: 360px;
     }
 
-    .grid-row-1 {
-      grid-column-start: 1;
+    /*.grid-row-1 {
+       grid-column-start: 1;
     }
 
     .grid-row-2 {
-      grid-column-start: 2;
-    }
+       grid-column-start: 2;
+    }*/
   }
 }
 

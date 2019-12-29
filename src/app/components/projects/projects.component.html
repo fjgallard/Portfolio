@@ -12,38 +12,26 @@
           <mat-card-title>Blog App</mat-card-title>
           <mat-card-subtitle>A Blogging Application</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="assets/blog-img.png" alt="Blog Project">
+        <img mat-card-image src="https://firebasestorage.googleapis.com/v0/b/fir-project-c19b4.appspot.com/o/blog-img.PNG?alt=media&token=92cde1cc-ace2-4cc4-93e6-dba9569b17c4" alt="Blog Project">
         <mat-card-content>
           <p>
-            A barebones blog!
-          </p>
-          <p>
-            Didn't use Wordpress or any CMS or CMS-like plugin - just basic CRUD with Firestore and a Rich Text Editor.
+            A Simple Blog with a barebones CMS made with Angular and Firebase.
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="goTo('https://github.com/fjgallard/blog')">Github</button>
-          <button mat-button (click)="goTo('https://blog-60969.firebaseapp.com/articles')">Go to Live</button>
+          <button mat-button (click)="goTo('https://github.com/fjgallard/blog-app')">Github</button>
+          <button mat-button (click)="goTo('https://blog-60969.firebaseapp.com/')">Go to Live</button>
         </mat-card-actions>
       </mat-card>
       <mat-card class="project-card grid-row-2">
           <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-card-title>Working in Other Projects</mat-card-title>
+            <mat-card-subtitle>More Projects Soon</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
+          <mat-card-content class="card-content">
+            <mat-spinner></mat-spinner>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
         </mat-card>
     </div>
   </div>

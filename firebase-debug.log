@@ -1,0 +1,52 @@
+[debug] [2020-02-15T14:57:38.632Z] ----------------------------------------------------------------------
+[debug] [2020-02-15T14:57:38.635Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jomer\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-02-15T14:57:38.635Z] CLI Version:   7.13.0
+[debug] [2020-02-15T14:57:38.636Z] Platform:      win32
+[debug] [2020-02-15T14:57:38.636Z] Node Version:  v10.16.1
+[debug] [2020-02-15T14:57:38.637Z] Time:          Sat Feb 15 2020 22:57:38 GMT+0800 (Taipei Standard Time)
+[debug] [2020-02-15T14:57:38.637Z] ----------------------------------------------------------------------
+[debug] [2020-02-15T14:57:38.637Z] 
+[debug] [2020-02-15T14:57:38.671Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-15T14:57:38.673Z] > authorizing via signed-in user
+[debug] [2020-02-15T14:57:38.673Z] [iam] checking project fir-project-c19b4 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2020-02-15T14:57:38.677Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-project-c19b4:testIamPermissions  
+
+[debug] [2020-02-15T14:57:40.204Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-15T14:57:40.213Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/fir-project-c19b4  
+ 
+[debug] [2020-02-15T14:57:41.341Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'fir-project-c19b4'...
+[info] 
+[info] i  deploying database, firestore, hosting
+[info] i  database: checking rules syntax...
+[debug] [2020-02-15T14:57:41.390Z] >>> HTTP REQUEST PUT https://fir-project-c19b4.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2020-02-15T14:57:42.773Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database fir-project-c19b4 is valid
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[info] i  cloud.firestore: checking firestore.rules for compilation errors...
+[debug] [2020-02-15T14:57:42.857Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/fir-project-c19b4:test  
+
+[debug] [2020-02-15T14:57:44.404Z] <<< HTTP RESPONSE 200
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully
+[debug] [2020-02-15T14:57:44.407Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/fir-project-c19b4/versions  
+
+[debug] [2020-02-15T14:57:46.321Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-15T14:57:46.328Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/fir-project-c19b4/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-02-15T14:57:46.329Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/fir-project-c19b4/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2020-02-15T14:57:47.034Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-15T14:57:47.037Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/fir-project-c19b4/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2020-02-15T14:57:47.577Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-15T14:57:47.578Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/fir-project-c19b4/rulesets/e1283d5f-77b2-448e-85e8-3b9531fb1986  
+ 
+[debug] [2020-02-15T14:57:47.710Z] <<< HTTP RESPONSE 200
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
